@@ -1,8 +1,27 @@
-@echo off 
+@echo off
 setlocal enabledelayedexpansion
-:: Set the source folder and destination folder
-set SOURCE=C:\Sample Folder
-set DESTINATION=D:\WeeklyBackups
+
+:: Check if source and destination parameters are provided
+if "%1"=="" (
+    echo ERROR: Source folder is not specified.
+    echo Usage: backup.bat ^<SourcePath^> ^<DestinationPath^>
+    pause
+    exit /b
+)
+
+if "%2"=="" (
+    echo ERROR: Destination folder is not specified.
+    echo Usage: backup.bat ^<SourcePath^> ^<DestinationPath^>
+    pause
+    exit /b
+)
+
+:: Set the source and destination to the provided parameters
+set SOURCE=%1
+set DESTINATION=%2
+
+echo SOURCE: %SOURCE%
+echo SOURCE: %DESTINATION%
 
 if not exist "%DESTINATION%" mkdir "%DESTINATION%"
 
