@@ -56,5 +56,5 @@ if !BACKUP_COUNT! gtr 2 (
     )
 )
 
-echo Backup completed successfully.
+echo Backup completed.
 pause
